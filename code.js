@@ -53,7 +53,7 @@ function renderizarDatosUsuario() {
   obtenerDatosDelUsuario();
   /* --------------- PUNTO 2: Escribe tu codigo a partir de aqui --------------- */
   infoUsuario=document.querySelector(".card-header");
-  infoUsuario.innerHTML=`<h3> Nombre : ${datosPersona.nombre}</h3> <h3> Edad : ${datosPersona.edad}</h3>  <h3> Ciudad : ${datosPersona.ciudad}</h3> <h3> Te interesa Js : ${datosPersona.interesPorJs}</h3> `;
+  infoUsuario.innerHTML=`<h3> Nombre : ${datosPersona.nombre}</h3> <h3> Edad : ${datosPersona.edad}</h3> <h3> Ciudad : ${datosPersona.ciudad}</h3> <h3> Te interesa Js : ${datosPersona.interesPorJs}</h3> `;
 
 }
 
@@ -75,11 +75,18 @@ function recorrerListadoYRenderizarTarjetas() {
 
 function alternarColorTema() {
   /* --------------------- PUNTO 4: Escribe tu codigo aqui --------------------- */
- 
-  
 
+  sitio = document.getElementById("sitio");
+  sitio.classList.toggle("dark");
 
 }
-
 /* --------------------- PUNTO 5: Escribe tu codigo aqui --------------------- */
+//divOculto=querySelector("sobre-mi");
 
+window.addEventListener("keypress",function(e){
+  if ((e.key == "f") || (e.key == "F")){
+    // divOculto.classList.remove("oculto");
+    this.alert("A");
+    document.getElementById("sobre-mi").style.display = "none";
+  }
+});
