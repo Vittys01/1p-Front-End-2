@@ -60,16 +60,25 @@ function renderizarDatosUsuario() {
 
 function recorrerListadoYRenderizarTarjetas() {
   /* ------------------ PUNTO 3: Escribe tu codigo desde aqui ------------------ */
+  let containerDiv = document.querySelector("#fila");
+  // for(materia of listado){
   
-  for(materia of listado){
-    let containerDiv = document.querySelector("#fila");
+    // let itemDiv = document.createElement("div");
+    // itemDiv.classList.add("caja");
+    // itemDiv.innerHTML = `<img src=${materia.imgUrl} alt=${materia.lenguajes}>
+    // <p>${materia.lenguajes}</p>
+    // <p>${materia.bimestre}</p>`;
+    // containerDiv.appendChild(itemDiv);
+  // }
+
+  listado.forEach((materia, index) => {
     let itemDiv = document.createElement("div");
     itemDiv.classList.add("caja");
-    itemDiv.innerHTML = `<img src=${listado.imgUrl} alt=${listado.lenguajes}>
-      <p>${listado.lenguajes}</p>
-      <p>${listado.bimestre}</p>`;
+    itemDiv.innerHTML = `<img src=${materia.imgUrl} alt=${materia.lenguajes}>
+      <p>${materia.lenguajes}</p>
+      <p>${materia.bimestre}</p>`;
     containerDiv.appendChild(itemDiv);
-  }
+  });
 
 }
 
@@ -82,11 +91,9 @@ function alternarColorTema() {
 }
 /* --------------------- PUNTO 5: Escribe tu codigo aqui --------------------- */
 //divOculto=querySelector("sobre-mi");
-
+divOculto=document.getElementById("sobre-mi");
 window.addEventListener("keypress",function(e){
   if ((e.key == "f") || (e.key == "F")){
-    // divOculto.classList.remove("oculto");
-    this.alert("A");
-    document.getElementById("sobre-mi").style.display = "none";
+    divOculto.classList.remove("oculto");
   }
 });
