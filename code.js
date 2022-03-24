@@ -72,14 +72,16 @@ function recorrerListadoYRenderizarTarjetas() {
   // }
 
   listado.forEach((materia, index) => {
+    let numb = containerDiv.childElementCount;
+    if(numb < listado.length){
     let itemDiv = document.createElement("div");
     itemDiv.classList.add("caja");
     itemDiv.innerHTML = `<img src=${materia.imgUrl} alt=${materia.lenguajes}>
       <p>${materia.lenguajes}</p>
       <p>${materia.bimestre}</p>`;
     containerDiv.appendChild(itemDiv);
+  }
   });
-
 }
 
 function alternarColorTema() {
